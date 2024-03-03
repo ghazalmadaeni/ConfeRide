@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <!-- <form action="{% url 'rides:create' %}" method="post">
+        {% csrf_token %}
+        {{ new_ride_form }}
+        <input type="submit" value="Submit">
+      </form> -->
+      <div class="d-flex">
+        <div class="col-3">
+            <div>
+                <img src="{% static 'confer1.png' %}" alt="Image of logo" width="300">
+              </div>
+        </div>
+    
+
+        <div class="col-6" style="margin-left: auto; margin-right: auto;">
+            <form action="{% url 'rides:create' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3"><label for="first_name">First Name</label><input class="form-control" name="first_name" maxlength="64" id="id_first_name" type="text"></div>
+                <div class="mb-3"><label for="last_name">Last Name</label><input class="form-control" name="last_name" maxlength="64" id="id_last_name" type="text"></div>
+                <div class="mb-3"><label for="email_address">Email address</label><input class="form-control" name="email" id="id_email" type="text" placeholder="name@example.com"></div>
+                <div class="mb-3"><label for="vehicle_make">Vehicle Make</label><input class="form-control" name="vehicle_make" maxlength="64" id="id_vehicle_make" type="text"></div>
+                <div class="mb-3"><label for="vehicle_model">Vehicle Model</label><input class="form-control" name="vehicle_model" maxlength="64" id="id_vehicle_model" type="text"></div>
+                <div class="mb-3"><label for="vehicle_color">Vehicle Color</label><input class="form-control" name="vehicle_color" maxlength="64" id="id_vehicle_color" type="text"></div>
+                <div class="mb-3"><label for="origination">Origination</label><input class="form-control" name="origination" maxlength="64" id="id_origination" type="text"></div>
+                <div class="mb-3"><label for="destination_city">Destination City</label><input class="form-control" name="destination_city" maxlength="64" id="id_destination_city" type="text"></div>
+                <div class="mb-3">
+                    <label for="destination_state">Destination State</label><select class="form-control" name="destination_state" id="id_destination_state">
+                        <option>AK</option>
+                        <option>AZ</option>
+                        <option>AR</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
+                        <option>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>IA</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MA</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MS</option>
+                        <option>MO</option>
+                        <option>MT</option>
+                        <option>NE</option>
+                        <option>NV</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NY</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VT</option>
+                        <option>VA</option>
+                        <option>WA</option>
+                        <option>WV</option>
+                        <option>WI</option>
+                        <option>WY</option>
+                    </select>
+                </div>
+                <div class="mb-3"><label for="date">Date</label><input class="form-control" name="date" id="id_date" type="text" placeholder="01/01/2022"></div>
+                <div class="mb-3"><label for="time">Time</label><input class="form-control" name="time" id="id_time" type="text" placeholder="14:30"></div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" name="taking_passengers" id="id_taking_passengers" type="checkbox" onclick="checkSeats()">
+                    <label class="form-check-label" for="flexCheckDefault">Taking Passengers?</label>
+                </div>
+                <div class="mb-3"><label for="seats_available">Seats Available</label><input class="form-control" name="seats_available" id="id_seats_available" type="number" value=1></div>
+                <input type="submit" class="btn btn-primary p-3" value="Submit">
+            </form>
+        </div>
+
+        <div class="col-3">
+            <div>
+                <img src="{% static 'confer2.png' %}" alt="Image of logo" width="300">
+              </div>
+        </div>
+
+
+        </div>
+      <br>
+{% endblock %}
