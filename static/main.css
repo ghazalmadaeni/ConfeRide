@@ -12,10 +12,6 @@ body {
     color: #003049;
 }
 
-.car-background {
-    background-image: url('./DJI_0085.jpg');
-}
-
 select {
     height: auto !important;
 }
